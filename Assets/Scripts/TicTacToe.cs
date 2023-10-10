@@ -426,5 +426,27 @@ public class TicTacToe : MonoBehaviour
 
         return true;
     }
+    public void OnRestartButton()
+    {
+        // 초기화 코드 추가
+        state = State.Start;
+        stoneTurn = Stone.StoneO;
+        stoneI = Stone.StoneO;
+        stoneYou = Stone.StoneX;
+        stoneWinner = Stone.None;
 
+        for (int i = 0; i < board.Length; ++i)
+        {
+            board[i] = (int)Stone.None;
+        }
+
+        // 추가한 코드: 다시 그려진 texO, texX를 없앰
+        // 여기서는 해당 텍스쳐가 그려진 상태에서만 없애는 코드입니다.
+        // 다른 경우에는 상황에 따라 다르게 처리해야 할 수 있습니다.
+        // 예를 들어, 상대방과의 통신이 이루어진 경우에는 서버와 클라이언트를 재시작해야 할 수 있습니다.
+        // 상황에 맞게 수정해주세요.
+        Graphics.DrawTexture(new Rect(660, 300, 600, 600), texBoard);
+
+        buttonRestart.gameObject.SetActive(false);
+    }
 }

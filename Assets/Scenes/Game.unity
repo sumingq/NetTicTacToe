@@ -871,8 +871,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1661282856}
-        m_TargetAssemblyTypeName: Main, Assembly-CSharp
+      - m_Target: {fileID: 254100675}
+        m_TargetAssemblyTypeName: TicTacToe, Assembly-CSharp
         m_MethodName: OnRestartButton
         m_Mode: 1
         m_Arguments:
