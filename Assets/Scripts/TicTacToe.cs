@@ -42,6 +42,12 @@ public class TicTacToe : MonoBehaviour
     public Texture winnerO;
     public Texture draw;
 
+    public AudioClip moveSound; // 놓을 때 효과음
+    private AudioSource audioSource;
+
+    public AudioClip bgmClip;  // BGM AudioClip
+    private AudioSource bgmAudioSource;
+
     // 3*3 보드 배열 선언
     int[] board = new int[9];
     // 리스트는 크기가 정해져 있지 않아서 유동적으로 사용 가능
@@ -80,6 +86,10 @@ public class TicTacToe : MonoBehaviour
         buttonClient = GameObject.Find("ButtonClient").GetComponent<Button>();
         buttonRestart = GameObject.Find("ButtonRestart").GetComponent<Button>();
         buttonRestart.gameObject.SetActive(false);
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = moveSound; // 효과음 파일 지정
+        audioSource.playOnAwake = false; // 즉시 재생하지 않도록 설정
     }
 
     public void ServerStart()
@@ -205,8 +215,8 @@ public class TicTacToe : MonoBehaviour
             stoneI = Stone.StoneX;
             stoneYou = Stone.StoneO;
         }
-
     }
+
 
     void UpdateGame()
     {
@@ -318,8 +328,6 @@ public class TicTacToe : MonoBehaviour
 
         void UpdateEnd()
     {
-        
-
         if (stoneWinner != Stone.None)
         {
             Debug.Log("승리 : " + (int)stoneWinner);
@@ -340,7 +348,6 @@ public class TicTacToe : MonoBehaviour
             Graphics.DrawTexture(new Rect(585, 415, 750, 250), draw);
             buttonRestart.gameObject.SetActive(true);
             Debug.Log("무승부");
-
         }
     }
 
@@ -356,7 +363,6 @@ public class TicTacToe : MonoBehaviour
         // 배치하려는 칸에 스톤이 배치되어 있으면 false 리턴
         return false;
     }
-
 
     int PosToNumber(Vector3 pos)
     {
@@ -386,7 +392,6 @@ public class TicTacToe : MonoBehaviour
         return i;
     }
 
-
     bool MyTurn()
     {
         // 마우스 왼쪽 버튼이 클릭되었는지 여부를 확인
@@ -403,7 +408,6 @@ public class TicTacToe : MonoBehaviour
        
         // 화면 좌표를 게임 보드 상의 위치로 변환
          int i = PosToNumber(pos);
-       
 
         // 변환된 위치가 유효하지 않으면 함수 종료
         if (i == -1)
@@ -424,11 +428,20 @@ public class TicTacToe : MonoBehaviour
 
         Debug.Log("보냄:" + i);
 
+        PlayMoveSound();
+
         return true;
+    }
+
+    void PlayMoveSound()
+    {
+        if (audioSource != null && moveSound != null)
+        {
+            audioSource.Play();
+        }
     }
     public void OnRestartButton()
     {
-        // 초기화 코드 추가
         state = State.Start;
         stoneTurn = Stone.StoneO;
         stoneI = Stone.StoneO;
@@ -440,11 +453,6 @@ public class TicTacToe : MonoBehaviour
             board[i] = (int)Stone.None;
         }
 
-        // 추가한 코드: 다시 그려진 texO, texX를 없앰
-        // 여기서는 해당 텍스쳐가 그려진 상태에서만 없애는 코드입니다.
-        // 다른 경우에는 상황에 따라 다르게 처리해야 할 수 있습니다.
-        // 예를 들어, 상대방과의 통신이 이루어진 경우에는 서버와 클라이언트를 재시작해야 할 수 있습니다.
-        // 상황에 맞게 수정해주세요.
         Graphics.DrawTexture(new Rect(660, 300, 600, 600), texBoard);
 
         buttonRestart.gameObject.SetActive(false);

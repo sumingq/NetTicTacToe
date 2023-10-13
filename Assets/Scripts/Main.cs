@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
+    public GameObject moveHomeImage;
+    private Tcp tcp;
+
     public void OnPlayButton()
     {
         SceneManager.LoadScene(1);
@@ -19,5 +22,20 @@ public class Main : MonoBehaviour
     {
         SceneManager.LoadScene(1);
 
+    }
+    public void OnMoveHomeButton()
+    {
+        if (moveHomeImage != null)
+        {
+            moveHomeImage.SetActive(true);
+        }
+    }
+    public void OnMoveHomeYesButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void OnMoveHomeNoButton()
+    {
+        moveHomeImage.SetActive(false);
     }
 }
