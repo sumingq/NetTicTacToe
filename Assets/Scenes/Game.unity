@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ip: {fileID: 644342194}
-  texBoard: {fileID: 2800000, guid: e904fa7ea140e8e4aac534ed378678ff, type: 3}
-  texX: {fileID: 2800000, guid: 7e44cfa9cde578249b5c6592d63fa689, type: 3}
-  texO: {fileID: 2800000, guid: b8ec7656e4ab27b4284e52ff7d723eb5, type: 3}
+  texBoard: {fileID: 2800000, guid: e0a4fc403eab7df4f81db40bee90e880, type: 3}
+  texX: {fileID: 2800000, guid: 8eea66f6015af4646ab1c2c195e229ac, type: 3}
+  texO: {fileID: 2800000, guid: 6607d6de7ea63b345bacf65f2719cc53, type: 3}
   turnX: {fileID: 2800000, guid: 537f99519e3efbf46ac81b7f198a9cea, type: 3}
   turnO: {fileID: 2800000, guid: 9744eeca691efa542901850b2fa7cde5, type: 3}
   winnerX: {fileID: 2800000, guid: c0684c8432de76d4987be5b93bd2b8d9, type: 3}
@@ -1537,7 +1537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1034564314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2122,7 +2122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc124f248c9014a43a093b6b30e80a37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4961de58db506748b35f294afc06854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

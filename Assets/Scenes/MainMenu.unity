@@ -162,6 +162,8 @@ MonoBehaviour:
   winnerX: {fileID: 0}
   winnerO: {fileID: 0}
   draw: {fileID: 0}
+  moveSound: {fileID: 0}
+  bgmClip: {fileID: 0}
 --- !u!114 &254100676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94e1d3041005274b8a447c78f4000bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveHomeImage: {fileID: 0}
 --- !u!1 &1676762992
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +700,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc124f248c9014a43a093b6b30e80a37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4961de58db506748b35f294afc06854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
