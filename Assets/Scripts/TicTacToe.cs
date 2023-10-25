@@ -366,11 +366,11 @@ public class TicTacToe : MonoBehaviour
 
     int PosToNumber(Vector3 pos)
     {
-        // 입력된 pos의 x좌표에서 50을 뺀 값을 x에 저장
-        // 마우스 클릭한 위치에서 x좌표의 원점을 (50,0)으로 이동시키는 역할
+        // 입력된 pos의 x좌표에서 660을 뺀 값을 x에 저장
+        // 마우스 클릭한 위치에서 x좌표의 원점을 (660,0)으로 이동시키는 역할
         float x = pos.x - 660;
-        // 입력된 pos의 y좌표에서 50을 뺀 값에 'Screen.height(화면높이)'에서 또 50을 뺀 값을 빼줌
-        // 클릭 위치에서 y좌표의 원점을 ('Screen.height-50', 50)으로 이동시키는 역할
+        // 입력된 pos의 y좌표에서 50을 뺀 값에 'Screen.height(화면높이)'에서 또 300을 뺀 값을 빼줌
+        // 클릭 위치에서 y좌표의 원점을 ('Screen.height-660', 300)으로 이동시키는 역할
         float y = Screen.height - 300 - pos.y;
 
         if (x < 0.0f || x >= 600.0f)
