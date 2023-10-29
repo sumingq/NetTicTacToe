@@ -320,7 +320,7 @@ MonoBehaviour:
   winnerX: {fileID: 2800000, guid: c0684c8432de76d4987be5b93bd2b8d9, type: 3}
   winnerO: {fileID: 2800000, guid: 5a1e8a41f25329745bceea5b1e769763, type: 3}
   draw: {fileID: 2800000, guid: 7fd28fca2e596ee41a5e41e9bd26cd1c, type: 3}
-  moveSound: {fileID: 8300000, guid: 4a09040e8e6916c4aae24278581e6b06, type: 3}
+  moveSound: {fileID: 8300000, guid: 32866c54817c49745ad69aa80bfe34b9, type: 3}
   bgmClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
 --- !u!114 &254100676
 MonoBehaviour:
